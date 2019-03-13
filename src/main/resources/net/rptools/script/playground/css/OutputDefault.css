@@ -1,0 +1,141 @@
+
+
+.inlineSuccessDieRoll {
+  color: green;
+}
+
+.inlineFailureDieRoll {
+  color: red;
+}
+
+.inlineCriticalDieRoll {
+  background-color: green;
+  color: white;
+  border-radius: 5px;
+  padding: 2px;
+  font-weight: bold;
+}
+
+
+.inlineFumbleDieRoll {
+  background-color: red;
+  color: white;
+  border-radius: 5px;
+  padding: 2px;
+  font-weight: bold;
+}
+
+
+
+
+
+.inlineDroppedDieRoll {
+  position: relative;
+}
+
+.inlineDroppedDieRoll:before {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 50%;
+  right: 0;
+  border-top: 2px solid;
+  border-color: red;
+
+  /*  transform:rotate(-25deg);*/
+}
+
+
+div.inlineRoll {
+  display: inline-block;
+}
+
+.inlineRollDetails {
+  position: relative;
+}
+
+.inlineRoll:hover .inlineRollPart {
+  opacity: 1;
+}
+
+.inlineRollPart {
+  top: -20px;
+  background-color: black;
+  color: white;
+  padding: 10px;
+  border-radius: 15px;
+  opacity: 0;
+  position: absolute;
+  -webkit-transition: opacity 0.5s;
+  transition:  opacity 0.5s;
+  white-space: nowrap;
+}
+
+body {
+}
+
+/* --------------------------------------------------------------------------------- */
+
+ul.inlineRollPart li {
+  display: inline;
+  padding: 0px;
+  margin: 0px;
+}
+
+li.inlineRollRolls ul {
+  display: inline;
+  padding: 0px;
+}
+
+
+li.inlineRollExpansion {
+  /*padding-left: 16px;*/
+}
+
+ul.inlineRollExpansion {
+  list-style: none; /* Remove list bullets */
+  padding: 0;
+  margin: 0;
+}
+
+
+ul.inlineRollExpansion:before {
+  content: "-";
+  padding-right: 4px;
+  float: left;
+}
+
+li.inlineRollExpansionExpression:after {
+  content: "\021A0";
+  padding-left: 4px;
+}
+
+li.inlineRollRolls:before {
+  content: "[";
+  color: dodgerblue;
+  padding-left: 4px;
+}
+
+li.inlineRollRolls:after {
+  content: "]";
+  color: dodgerblue;
+  padding-left: 4px;
+}
+
+li.inlineRollDetailsResult:before {
+  content: "\027BE";
+  padding-right: 4px;
+}
+
+li.inlineRollExpression:after {
+  content: "\0290F";
+  padding-left: 4px;
+}
+
+li.inlineRollPartDetails > ul {
+  padding-left: 26px;
+}
+
+li[data-rollDelim]:before {
+  content: attr(data-rollDelim);
+}

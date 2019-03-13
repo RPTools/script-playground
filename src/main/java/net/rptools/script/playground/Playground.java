@@ -12,19 +12,24 @@
  * <http://www.gnu.org/licenses/> and specifically the Affero license
  * text at <http://www.gnu.org/licenses/agpl.html>.
  */
-package net.rptools.dice.playground;
+package net.rptools.script.playground;
 
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import net.rptools.dice.DiceExpression;
 import net.rptools.dice.result.PlainResultFormatter;
 import net.rptools.dice.symbols.DefaultDiceExpressionSymbolTable;
 import net.rptools.dice.symbols.DiceEvalScope;
 
-public class Test {
+public class Playground extends Application {
 
   private static final DefaultDiceExpressionSymbolTable symbolTable =
       new DefaultDiceExpressionSymbolTable();
 
-  public static void main(String[] args) throws Exception {
+  public static void oldmain(String[] args) throws Exception {
     if (args.length == 0) {
       System.err.println("Usage: DiceTest <filename>");
       System.err.println("                  - for stdin");
@@ -70,5 +75,26 @@ public class Test {
               System.out.println(val.getType() + ":" + name + " = " + val.getStringResult());
             });
     System.out.println();
+  }
+
+  public static void main(String[] args) {
+    launch(args);
+  }
+
+
+  @Override
+  public void start(Stage primaryStage) throws Exception {
+    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(
+        "/net/rptools/script/playground/Playground.fxml"));
+    AnchorPane
+
+        pane = fxmlLoader.load();
+    Scene scene = new Scene(pane);
+
+    primaryStage.setTitle("Dice Playground.");
+    primaryStage.setScene(scene);
+
+    primaryStage.show();
+
   }
 }

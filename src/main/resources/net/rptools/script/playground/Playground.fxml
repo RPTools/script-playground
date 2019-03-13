@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.web.WebView?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.rptools.script.playground.controller.MainScreenController">
+   <children>
+      <JFXTextArea fx:id="inputTextArea" layoutX="14.0" layoutY="414.0" prefHeight="188.0" prefWidth="678.0" styleClass="inputText" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="122.0" />
+      <JFXButton fx:id="executeInputButton" alignment="CENTER" layoutX="727.0" layoutY="552.0" onAction="#doExecute" prefWidth="118.0" styleClass="executeButton" text="Execute" AnchorPane.bottomAnchor="4.0" AnchorPane.rightAnchor="4.0" />
+      <WebView fx:id="outputWebView" layoutX="9.0" layoutY="14.0" prefHeight="406.0" prefWidth="792.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="4.0" />
+   </children>
+</AnchorPane>

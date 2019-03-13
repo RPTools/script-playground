@@ -1,8 +1,7 @@
 
 sourceControl {
 
-    gitRepository(uri("../dice")) {
-    //gitRepository(uri("https://github.com/cwisniew/Dice-Roller-POC")) {
+    gitRepository(uri("https://github.com/RPTools/dice.git")) {
         producesModule("net.rptools.dice:dice")
     }
 }
